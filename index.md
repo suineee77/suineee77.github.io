@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
@@ -58,7 +59,10 @@
 body {
 font-family: Arial, sans-serif;
 background-color: aliceblue;
-text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 h1{
 	color: lightblue;
@@ -70,7 +74,7 @@ h3 {
 cursor: pointer;
 background-color: lightgoldenrodyellow;
 padding: 10px;
-border: 1px solid #ddd;
+border: 1px aliceblue;
 border-radius: 3px;
 width: 250px;
 text-align: center;
@@ -150,3 +154,4 @@ menu.classList.toggle('show');
 <script>anchors.add();</script>
 </body>
 </html>
+
