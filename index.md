@@ -58,6 +58,7 @@
 body {
 font-family: Arial, sans-serif;
 background-color: aliceblue;
+text-decoration: none;
 }
 h1{
 	color: lightblue;
