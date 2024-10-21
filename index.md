@@ -4,41 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>欢迎来到我的博客 | skills-github-pages</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="欢迎来到我的博客" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="My clone repository" />
-<meta property="og:description" content="My clone repository" />
-<link rel="canonical" href="https://suineee77.github.io/skills-github-pages/" />
-<meta property="og:url" content="https://suineee77.github.io/skills-github-pages/" />
-<meta property="og:site_name" content="skills-github-pages" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="欢迎来到我的博客" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"My clone repository","headline":"欢迎来到我的博客","name":"skills-github-pages","url":"https://suineee77.github.io/skills-github-pages/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/skills-github-pages/assets/css/style.css?v=32a787dc3a07372b5a8bf97eb14ece9941d4d69e">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/skills-github-pages/favicon.ico" -->
-
-<!-- end custom head snippets -->
+    <link rel="stylesheet" href="/suineee77.guthub.io/assets/css/style.css?v=32a787dc3a07372b5a8bf97eb14ece9941d4d69e">
 
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       
-      <h1><a href="https://suineee77.github.io/skills-github-pages/">skills-github-pages</a></h1>
+      <h1><a href="https://suineee77.github.io">skills-github-pages</a></h1>
       
 
       <h1 id="欢迎来到我的博客">欢迎来到我的博客</h1>
