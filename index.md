@@ -11,12 +11,10 @@
 <h1><a href="https://suineee77.github.io/"></a></h1>
 
 
-<h1 id="欢迎来到我的博客">欢迎来到我的博客</h1>
-
-<p>这是我的第一篇博客，我将在这里分享我的学习经验和教程。</p>
-<h2 id="计算机图形学作业">计算机图形学作业</h2>
+<h1 id="欢迎来到我的博客" style="text-align: center;">欢迎来到我的网页</h1>
+<h2 id="计算机图形学作业" style="text-align: center;">计算机图形学作业</h2>
 <!-- HTML 部分 -->
-<h3 id="menuTitle1">2024-09-10作业1</h3>
+<h3 id="menuTitle1">实验一</h3>
 
 <div id="popupMenu1" class="menu">
 <ul>
@@ -26,7 +24,8 @@
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验一/html代码/四边形.html">任务4</a></li>
 </ul>
 </div>
-<h3 id="menuTitle2">2024-09-24作业2</h3>
+<p></p>
+<h3 id="menuTitle2">实验二</h3>
 <div id="popupMenu2" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验二/html/任务a.html">任务a</a></li>
@@ -34,16 +33,16 @@
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验二/html/任务c.html">任务c</a></li>
 </ul>
 </div>
-
-<h3 id="menuTitle3">2024-10-08作业3</h3>
+<p></p>
+<h3 id="menuTitle3">实验三</h3>
 <div id="popupMenu3" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验三/html/任务a.html">任务a</a></li>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验三/html/任务b.html">任务b</a></li>
 </ul>
 </div>
-
-<h3 id="menuTitle4">2024-10-15作业4</h3>
+<p></p>
+<h3 id="menuTitle4">实验四</h3>
 
 <div id="popupMenu4" class="menu">
 <ul>
@@ -59,20 +58,28 @@
 <style>
 body {
 font-family: Arial, sans-serif;
+background-color: aliceblue;
 }
-
+h1{
+	color: lightblue;
+}
+h2{
+	color: lightblue;
+}
 h3 {
 cursor: pointer;
-background-color: #f8f9fa;
+background-color: lightgoldenrodyellow;
 padding: 10px;
 border: 1px solid #ddd;
-border-radius: 5px;
-width: 200px;
+border-radius: 3px;
+width: 250px;
 text-align: center;
+color: lightblue;
+margin: 0 auto;
 }
 
 h3:hover {
-background-color: #e2e6ea;
+background-color: lightyellow;
 }
 
 /* 菜单初始隐藏状态 */
@@ -80,11 +87,12 @@ background-color: #e2e6ea;
 max-height: 0;
 overflow: hidden;
 transition: max-height 0.5s ease-out;
-background-color: white;
+background-color: lightyellow;
 border: 1px solid #ddd;
 border-radius: 5px;
-width: 200px;
+width: 240px;
 margin-top: 5px;
+margin: 0 auto;
 }
 
 .menu ul {
@@ -99,16 +107,15 @@ padding: 10px;
 
 .menu ul li a {
 text-decoration: none;
-color: #333;
+color:lightskyblue;
 }
 
 .menu ul li a:hover {
-color: #007bff;
+color: cadetblue;
 }
 
-/* 展开时菜单的最大高度 */
 .menu.show {
-max-height: 300px; /* 根据内容调整 */
+max-height: 300px; 
 }
 </style>
 
@@ -136,7 +143,6 @@ menu.classList.toggle('show');
 
 
 <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-This site is open source. <a href="https://github.com/kongyinshui/skills-github-pages/edit/main/index.md">Improve this page</a>.
 </div>
 
 </div>
