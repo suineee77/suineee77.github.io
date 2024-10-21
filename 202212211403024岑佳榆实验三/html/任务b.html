@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Moon and Star Animation</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #moon, .star {
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  #moon {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px; 
+  }
+  .star {
+    width: 40px;
+    height: 40px;
+  }
+  .container {
+    display: flex;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" onclick="changeStarColor()">
+  <div id="moon" onclick="changeMoonColor()"></div>
+  <div class="star"></div>
+</div>
+
+<script src="../js/1.js"></script>
+</body>
+</html>
