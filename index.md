@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
@@ -42,7 +43,6 @@
 </div>
 <p></p>
 <h3 id="menuTitle4">实验四</h3>
-
 <div id="popupMenu4" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四/html/任务a.html">任务a</a></li>
@@ -52,6 +52,30 @@
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四/html/任务e.html">任务d</a></li>
 </ul>
 </div>
+<p></p>
+<h3 id="menuTitle5">实验五</h3>
+<div id="popupMenu5" class="menu">
+<ul>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验五/html/实验五.html">任务a</a></li>
+</ul>
+</div>
+<p></p>
+<h3 id="menuTitle6">实验六</h3>
+<div id="popupMenu6" class="menu">
+<ul>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验六/html/任务a.html">任务a</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验六/html/任务b.html">任务b</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验六/html/任务c.html">任务c</a></li>
+</ul>
+</div>
+<p></p>
+<h3 id="menuTitle7">实验五</h3>
+<div id="popupMenu7" class="menu">
+<ul>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验七/html/任务a.html">任务a</a></li>
+</ul>
+</div>
+<p></p>
 
 <!-- CSS 部分 -->
 <style>
