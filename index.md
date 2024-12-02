@@ -53,15 +53,25 @@
 </ul>
 </div>
 <p></p>
-<h3 id="menuTitle5">实验五</h3>
+<h3 id="menuTitle5">实验四-2</h3>
 <div id="popupMenu5" class="menu">
+<ul>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四-2/html/任务a.html">任务a</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四-2/html/任务b.html">任务b</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四-2/html/任务c.html">任务c</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验四-2/html/任务d.html">任务d</a></li>
+</ul>
+</div>
+<p></p>
+<h3 id="menuTitle6">实验五</h3>
+<div id="popupMenu6" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验五/html/实验五.html">任务a</a></li>
 </ul>
 </div>
 <p></p>
-<h3 id="menuTitle6">实验六</h3>
-<div id="popupMenu6" class="menu">
+<h3 id="menuTitle7">实验六</h3>
+<div id="popupMenu7" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验六/html/任务a.html">任务a</a></li>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验六/html/任务b.html">任务b</a></li>
@@ -69,14 +79,21 @@
 </ul>
 </div>
 <p></p>
-<h3 id="menuTitle7">实验七</h3>
-<div id="popupMenu7" class="menu">
+<h3 id="menuTitle8">实验七</h3>
+<div id="popupMenu8" class="menu">
 <ul>
 <li><a href="https://suineee77.github.io/202212211403024岑佳榆实验七/html/任务a.html">任务a</a></li>
 </ul>
 </div>
 <p></p>
-
+<h3 id="menuTitle9">实验七-2</h3>
+<div id="popupMenu9" class="menu">
+<ul>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验7-2/html/任务a.html">任务a</a></li>
+<li><a href="https://suineee77.github.io/202212211403024岑佳榆实验7-2/html/任务b.html">任务b</a></li>
+</ul>
+</div>
+<p></p>
 <!-- CSS 部分 -->
 <style>
 body {
@@ -164,6 +181,26 @@ document.getElementById('menuTitle4').addEventListener('click', function() {
 var menu = document.getElementById('popupMenu4');
 menu.classList.toggle('show');
 });
+document.getElementById('menuTitle5').addEventListener('click', function() {
+var menu = document.getElementById('popupMenu5');
+menu.classList.toggle('show');
+});
+document.getElementById('menuTitle6').addEventListener('click', function() {
+var menu = document.getElementById('popupMenu6');
+menu.classList.toggle('show');
+});
+document.getElementById('menuTitle7').addEventListener('click', function() {
+var menu = document.getElementById('popupMenu7');
+menu.classList.toggle('show');
+});
+document.getElementById('menuTitle8').addEventListener('click', function() {
+var menu = document.getElementById('popupMenu8');
+menu.classList.toggle('show');
+});
+document.getElementById('menuTitle9').addEventListener('click', function() {
+var menu = document.getElementById('popupMenu9');
+menu.classList.toggle('show');
+});
 </script>
 
 
@@ -177,3 +214,4 @@ menu.classList.toggle('show');
 <script>anchors.add();</script>
 </body>
 </html>
+
