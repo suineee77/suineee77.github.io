@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube with Blue and White Faces</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px; /* Add space between canvas and controls */
+            white-space: nowrap; /* Keep buttons in a single row */
+            display: flex; /* Use flexbox layout for horizontal alignment */
+            justify-content: space-around; /* Distribute space around items */
+        }
+        button {
+            margin: 5px;
+            cursor: pointer; /* Change cursor to indicate clickable */
+            background-color: #2196F3; /* Blue button background */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            padding: 10px; /* Add padding */
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button id="rotateX">Rotate X+</button>
+        <button id="rotateY">Rotate Y+</button>
+        <button id="rotateZ">Rotate Z+</button>
+        <button id="rotateX-">Rotate X-</button>
+        <button id="rotateY-">Rotate Y-</button>
+        <button id="rotateZ-">Rotate Z-</button>
+    </div>
+    <canvas id="gl-canvas"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>    
+    <script>
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xeeeeee); // Plain white background
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.BoxGeometry(2, 2, 2); // Cube geometry
+
+        // Create materials for the cube faces
+        const blueMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff }); // Blue material
+        const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff }); // White material
+
+        // Create the cube with blue and white materials
+        const cube = new THREE.Mesh(geometry, [
+            blueMaterial, whiteMaterial, blueMaterial, whiteMaterial, // Front, Back, Right, Left
+            blueMaterial, blueMaterial, whiteMaterial, whiteMaterial  // Top, Bottom, Front, Back
+        ]);
+        scene.add(cube);
+
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        let rotationSpeed = { x: 0, y: 0, z: 0 };
+
+        // Add event listeners for the buttons
+        document.getElementById('rotateX').addEventListener('click', () => { rotationSpeed.x = 0.01; });
+        document.getElementById('rotateX-').addEventListener('click', () => { rotationSpeed.x = -0.01; });
+        document.getElementById('rotateY').addEventListener('click', () => { rotationSpeed.y = 0.01; });
+        document.getElementById('rotateY-').addEventListener('click', () => { rotationSpeed.y = -0.01; });
+        document.getElementById('rotateZ').addEventListener('click', () => { rotationSpeed.z = 0.01; });
+        document.getElementById('rotateZ-').addEventListener('click', () => { rotationSpeed.z = -0.01; });
+
+        const animate = () => {
+            requestAnimationFrame(animate);
+
+            cube.rotation.x += rotationSpeed.x;
+            cube.rotation.y += rotationSpeed.y;
+            cube.rotation.z += rotationSpeed.z;
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

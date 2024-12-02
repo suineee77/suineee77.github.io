@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        canvas { width: 100%; height: 100% }
+    </style>
+</head>
+<body>
+    <canvas id="gl-canvas"></canvas>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+        precision highp float;
+
+        in vec3 aPosition;
+        in vec3 aNormal;
+        in vec2 aTexCoord;
+        out vec2 vTexCoord;
+
+        uniform mat4 uModelViewMatrix;
+        uniform mat4 uProjectionMatrix;
+
+        void main(void) {
+            gl_Position = uProjectionMatrix * uModelViewMatrix * vec4(aPosition, 1.0);
+            vTexCoord = aTexCoord;
+        }
+    </script>
+    
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+        precision highp float;
+
+        uniform sampler2D uSampler;
+        in vec2 vTexCoord;
+        out vec4 fColor;
+
+        void main(void) {
+            fColor = texture(uSampler, vTexCoord);
+        }
+    </script>
+    
+    <script type="text/javascript">
+        var canvas = document.getElementById("gl-canvas");
+        var gl = canvas.getContext("webgl");
+
+        if (!gl) {
+            alert("Unable to initialize WebGL. Your browser may not support it.");
+            exit();
+        }
+
+        // 编译着色器程序
+        var vertexShader = getShader(gl, document.getElementById("vertex-shader").text, gl.VERTEX_SHADER);
+        var fragmentShader = getShader(gl, document.getElementById("fragment-shader").text, gl.FRAGMENT_SHADER);
+        var shaderProgram = initShaderProgram(gl, vertexShader, fragmentShader);
+
+        // 告诉WebGL如何从坐标向量中提取位置和纹理坐标
+        var positionAttributeLocation = gl.getAttribLocation(shaderProgram, "aPosition");
+        var texCoordAttributeLocation = gl.getAttribLocation(shaderProgram, "aTexCoord");
+
+        // 告诉WebGL如何从坐标向量中提取矩阵
+        var modelViewMatrixUniformLocation = gl.getUniformLocation(shaderProgram, "uModelViewMatrix");
+        var projectionMatrixUniformLocation = gl.getUniformLocation(shaderProgram, "uProjectionMatrix");
+
+        var samplerLocation = gl.getUniformLocation(shaderProgram, "uSampler");
+
+        // 创建用于存储和传递变换矩阵的缓冲区对象
+        var modelViewMatrixBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, modelViewMatrixBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+            // 这里填充模型视图矩阵的数据
+        ]), gl.STATIC_DRAW);
+
+        var projectionMatrixBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, projectionMatrixBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+            // 这里填充投影矩阵的数据
+        ]), gl.STATIC_DRAW);
+
+        // 设置清除颜色、深度和Stencil的值
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.enable(gl.DEPTH_TEST);
+
+        // 加载纹理
+        var texture = loadTexture(gl, 'path/to/your/texture.png');
+
+        // 渲染场景的函数
+        function render() {
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+            // 设置变换矩阵
+            var modelViewMatrix = mat4.create();
+            var projectionMatrix = mat4.create();
+            // 这里填充模型视图矩阵和投影矩阵的计算
+            // ...
+            // 将矩阵数据传递到着色器程序
+            gl.uniformMatrix4fv(modelViewMatrixUniformLocation, false, modelViewMatrix);
+            gl.uniformMatrix4fv(projectionMatrixUniformLocation, false, projectionMatrix);
+            // 绘制纹理
+            gl.activeTexture(gl.TEXTURE0);
+            gl.bindTexture(gl.TEXTURE_2D, texture);
+            gl.uniform1i(samplerLocation, 0);
+            // ...
+            requestAnimationFrame(render);
+        }
+
+        // 开始渲染循环
+        render();
+    </script>
+</body>
+</html>
